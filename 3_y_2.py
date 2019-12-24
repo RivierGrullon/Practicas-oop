@@ -41,6 +41,7 @@ class Deck(object):
     #Shuffle the deck 
     def barajar (self):
         shuffle(self.cards)   
+        return self.cards
 
     def show(self):
         for c in self.cards:
@@ -48,6 +49,7 @@ class Deck(object):
     #Take a card from the deck
     def show_drop(self):
         return self.cards.pop()
+
 
 class Player(object):
     def __init__(self, name):
@@ -68,6 +70,7 @@ class Player(object):
 
     def discard(self):
         return self.hand.pop()   
+    
 deck = Deck()
 deck.barajar()
 # # # deck.show()
@@ -75,4 +78,7 @@ deck.barajar()
 rivier = Player("Rivier")
 rivier.take_hand(deck) 
 rivier.show_hand()
+jose = Player("Jose Esteban")
+jose.take_hand(deck)
+jose.show_hand()
 # card.show()
