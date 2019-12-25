@@ -70,15 +70,27 @@ class Player(object):
 
     def discard(self):
         return self.hand.pop()   
-    
+
+
+class Undone_deck(object):
+    def __init__(self,deck):
+        self.Uncards = []
+        self.Uncards.append(deck.show_drop())
+   
+    def show_undeck(self):
+        for cards in self.Uncards:
+            cards.show()
+
 deck = Deck()
 deck.barajar()
+undonedeck = Undone_deck(deck)
+undonedeck.show_undeck()
 # # # deck.show()
 # deck.show()
-rivier = Player("Rivier")
-rivier.take_hand(deck) 
-rivier.show_hand()
-jose = Player("Jose Esteban")
-jose.take_hand(deck)
-jose.show_hand()
+# rivier = Player("Rivier")
+# rivier.take_hand(deck) 
+# rivier.show_hand()
+# jose = Player("Jose Esteban")
+# jose.take_hand(deck)
+# jose.show_hand()
 # card.show()
