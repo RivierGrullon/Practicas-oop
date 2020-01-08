@@ -66,7 +66,31 @@ class Player(object):
             cards.show()
 
     def discard(self):
-        return self.hand.pop()
+        s = int(input('what card do u want to discard'))
+        if s == 1:
+            undonedeck.Uncards.append(self.hand.pop(0))
+            undonedeck.show_undeck()
+            self.show_hand()
+        elif s == 2:
+            undonedeck.Uncards.append(self.hand.pop(1))
+            undonedeck.show_undeck()
+            self.show_hand()
+        elif s == 3:
+            undonedeck.Uncards.append(self.hand.pop(2))
+            undonedeck.show_undeck()
+            self.show_hand()
+        elif s == 4:
+            undonedeck.Uncards.append(self.hand.pop(3))
+            undonedeck.show_undeck()
+            self.show_hand()
+        elif s == 5:
+            undonedeck.Uncards.append(self.hand.pop(4))
+            undonedeck.show_undeck()
+            self.show_hand()
+        else:
+            undonedeck.Uncards.append(self.hand.pop(5))
+            undonedeck.show_undeck()
+            self.show_hand()
     def drop_cards(self):
         z = input('do u want take a card from deck or undonedeck')
         if z == 'deck':
@@ -96,6 +120,7 @@ rivier = Player("Rivier")
 rivier.take_hand(deck)
 rivier.show_hand()
 rivier.drop_cards()
+rivier.discard()
 # jose = Player("Jose Esteban")
 # jose.take_hand(deck)
 # jose.show_hand()
