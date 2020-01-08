@@ -6,9 +6,7 @@ class Card(object):
     def __init__(self,face,val):
         self.face = face
         self.val = val
-    
- 
- 
+
     def show(self):
         #Change the value of the special cards
         if self.val == 1:
@@ -32,15 +30,14 @@ class Deck(object):
         self.cards = []
         self.build_deck()
     def build_deck(self):
-        
+
         for w in ["♠","♥","♦","☘"]:
             for v in range(1,14):
                 self.cards.append(Card(w,v))
-                 
-             
-    #Shuffle the deck 
+
+    #Shuffle the deck
     def barajar (self):
-        shuffle(self.cards)   
+        shuffle(self.cards)
         return self.cards
 
     def show(self):
@@ -69,14 +66,22 @@ class Player(object):
             cards.show()
 
     def discard(self):
-        return self.hand.pop()   
+        return self.hand.pop()
+    def drop_cards(self):
+        z = input('do u want take a card from deck or undonedeck')
+        if z == 'deck':
+            self.hand.append(deck.show_drop())
+            self.show_hand()
+        elif z == 'undonedeck':
+            self.hand.append(undonedeck.Uncards.pop())
+            self.show_hand()
 
 
 class Undone_deck(object):
     def __init__(self,deck):
         self.Uncards = []
         self.Uncards.append(deck.show_drop())
-   
+
     def show_undeck(self):
         for cards in self.Uncards:
             cards.show()
@@ -87,9 +92,9 @@ undonedeck = Undone_deck(deck)
 undonedeck.show_undeck()
 # # # deck.show()
 # deck.show()
-rivier = Player("Rivier")
-rivier.take_hand(deck) 
-rivier.show_hand()
+# rivier = Player("Rivier")
+# rivier.take_hand(deck)
+# rivier.show_hand()
 # jose = Player("Jose Esteban")
 # jose.take_hand(deck)
 # jose.show_hand()
