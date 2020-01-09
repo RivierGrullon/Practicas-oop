@@ -107,20 +107,20 @@ class Undone_deck(object):
         self.Uncards.append(deck.show_drop())
 
     def show_undeck(self):
-        for cards in self.Uncards:
-            cards.show()
+        self.Uncards[-1].show()
 
 deck = Deck()
 deck.barajar()
 undonedeck = Undone_deck(deck)
+player = Player(input('Introduce your name: '))
 undonedeck.show_undeck()
 # # # deck.show()
 # deck.show()
-rivier = Player("Rivier")
-rivier.take_hand(deck)
-rivier.show_hand()
-rivier.drop_cards()
-rivier.discard()
+
+player.take_hand(deck)
+player.show_hand()
+player.drop_cards()
+player.discard()
 # jose = Player("Jose Esteban")
 # jose.take_hand(deck)
 # jose.show_hand()
