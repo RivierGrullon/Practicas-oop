@@ -92,7 +92,7 @@ class Player(object):
             undonedeck.show_undeck()
             self.show_hand()
     def drop_cards(self):
-        z = input('do u want take a card from deck or undonedeck?')
+        z = input('do u want take a card from deck or undonedeck? ')
         if z == 'deck':
             self.hand.append(deck.show_drop())
             self.show_hand()
